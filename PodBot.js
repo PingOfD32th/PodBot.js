@@ -13,6 +13,16 @@ client.on("ready", () => {
   console.log('Game Has been set');
 });
 //Welcome bot
+client.on('guildMemberAdd', member => {
+  member.guild.defaultChannel.send(`${member}, Welcome to Discord server for PoolOfD32th.club! Have a great time here. If you have any questions just ask! If you would like more information please type ./info for rules please type !rules`);
+  console.log('new user joined the channel.');
+  const channel = member.guild.channels.find('name', 'member-log');
+  if (!channel) return;
+  channel.send(`${member}, , Welcome to Discord server for PoolOfD32th.club! Have a great time here. If you have any questions just ask! If you would like more information please type ./info for rules please type !rules`);
+  console.log('new user joined the channel.');
+});
+
+//embeds
 const data1 = {
   "embed": {
     "title": "PoolofD32th.club",
@@ -86,12 +96,23 @@ if (!message.content.startsWith(config.prefix)) return;
     }else {
       if (message.content === config.prefix + 'fee') {
         message.channel.send('current fee is ' + BlockReward*Fee + ' burst/blockfind');
+      }else {
+        if (message.content === config.prefix + 'banner') {
+          message.channel.send('Possible Banner Background by **Smiley =)**', {
+            file: "https://cdn.discordapp.com/attachments/319637612019318784/326599023588933633/unknown.png"
+          })
+        }else {
+          if (message.content === config.prefix + 'uptime') {
+            message.channel.send('current uptime is ' + Math.floor(process.uptime()/60) + 'minutes.');
+          }
+        }
       }
     }
   }
 }
 }
 });
+
 //eval
 function clean(text) {
   if (typeof(text) === "string")
@@ -121,4 +142,3 @@ client.on("message", message => {
 
 
 client.login(config.token);
-//make pm2 watch wrapper scrips.
