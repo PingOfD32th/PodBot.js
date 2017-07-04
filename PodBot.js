@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const createEmbed = require("embed-creator");
 const config = require("./config.json");
 
 BlockReward=1748.00;
@@ -107,7 +106,6 @@ if (!message.content.startsWith(config.prefix)) return;
           }
         }
       }
-    }
   }
 }
 }
