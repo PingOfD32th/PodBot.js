@@ -13,11 +13,11 @@ client.on("ready", () => {
 });
 //Welcome bot
 client.on('guildMemberAdd', member => {
-  member.guild.defaultChannel.send(`${member}, Welcome to Discord server for PoolOfD32th.club! Have a great time here. If you have any questions just ask! If you would like more information please type ./info for rules please type !rules`);
+  member.guild.defaultChannel.send(`${member}, Welcome to Discord server for PoolOfD32th.club! Have a great time here. If you have any questions just ask! If you would like more information please type ?info for rules please type !rules`);
   console.log('new user joined the channel.');
   const channel = member.guild.channels.find('name', 'member-log');
   if (!channel) return;
-  channel.send(`${member}, , Welcome to Discord server for PoolOfD32th.club! Have a great time here. If you have any questions just ask! If you would like more information please type ./info for rules please type !rules`);
+  channel.send(`${member}, , Welcome to Discord server for PoolOfD32th.club! Have a great time here. If you have any questions just ask! If you would like more information please type ?info for rules please type !rules`);
   console.log('new user joined the channel.');
 });
 
@@ -37,13 +37,13 @@ const data1 = {
 };
 const data2 = {
   "embed": {
-    "title": "ALL.PoolofD32th.club",
-    "description": "Reward Recipient: [BURST-LBQ2-XLPT-S2S8-64ZG5](http://burstcoin.biz/address/4736628939229308608)\n First brought online: [06/11/17](https://all.poolofd32th.club)\n Fee: [1% (18.4 Burst/Blockfind)](https://all.poolofd32th.club/js/test.html)\n Payout: [200 Mined coin OR 48 hrs](https://all.poolofd32th.club/js/test.html)\n Rewards: [20/80](http://all.poolofd32th.club/js/test.html)\n Block History: [500](http://all.poolofd32th.club/js/test.html)\n Recommended plot size: [300GB+](http://all.poolofd32th.club/js/test.html)\n Highest deadline accepted: [365 days (31536000)](http://all.poolofd32th.club/js/test.html)\n",
-    "url": "https://all.poolofd32th.club",
+    "title": "xen.poolofD32th.club",
+    "description": "Reward Recipient: [BURST-LBQ2-XLPT-S2S8-64ZG5](http://burstcoin.biz/address/4736628939229308608)\n First brought online: [06/11/17](https://xen.poolofd32th.club)\n Fee: [1% (18.4 Burst/Blockfind)](https://xen.poolofd32th.club/js/test.html)\n Payout: [200 Mined coin OR 48 hrs](https://xen.poolofd32th.club/js/test.html)\n Rewards: [20/80](http://xen.poolofd32th.club/js/test.html)\n Block History: [500](http://xen.poolofd32th.club/js/test.html)\n Recommended plot size: [300GB+](http://xen.poolofd32th.club/js/test.html)\n Highest deadline accepted: [365 days (31536000)](http://xen.poolofd32th.club/js/test.html)\n",
+    "url": "https://xen.poolofd32th.club",
     "color": 7976557,
     "author": {
       "name": "Daughter Pool Info",
-      "url": "https://all.poolofd32th.club",
+      "url": "https://xen.poolofd32th.club",
       "icon_url": "https://forums.burst-team.us/assets/uploads/profile/3216-profileimg.png"
     }
   }
@@ -75,9 +75,9 @@ const data4 = {
 
 //info
 client.on("message", (message) => {
-if (!message.content.startsWith(config.prefix)) return;
+if (!message.content.startsWith(config.prefi)) return;
 
-  if (message.content === config.prefix + 'test') {
+  if (message.content === config.prefix + 'info') {
     message.channel.send(data1);
     message.channel.send(data2);
     //message.channel.send(data3);
@@ -102,14 +102,14 @@ if (!message.content.startsWith(config.prefix)) return;
           })
         }else {
           if (message.content === config.prefix + 'uptime') {
-            message.channel.send('current uptime is ' + Math.floor(process.uptime()/60) + 'minutes.');
+            message.channel.send('current uptime is ' + Math.floor(process.uptime()/60) + ' minutes.');
           }
         }
       }
   }
 }
 }
-});
+}});
 
 //eval
 function clean(text) {
@@ -140,3 +140,6 @@ client.on("message", message => {
 
 
 client.login(config.token);
+//to add
+//rules list
+//commands list
