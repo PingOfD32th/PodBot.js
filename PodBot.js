@@ -2,6 +2,19 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const createEmbed = require("embed-creator");
 const config = require("./config.json");
+const jquery = require("jquery.js")
+
+setInterval(function() {
+function loadEPLstandings () {
+    $.ajax({
+        url: 'http://msft.online/DaughterPool/BurstBlock.php',
+        type: 'GET',
+        success: function(res) {        
+            var success =  $(res.responseText).find("pre")[0].innerHTML;
+        }
+    });
+}
+}, 60 * 1000);
 
 BlockReward=1748.00;
 Fee=0.01;
@@ -72,13 +85,25 @@ const data4 = {
     }
   }
 };
+const data5 = {
+  "embed": {
+    "description": "${success}",
+    "url": "http://msft.online/DaughterPool/BurstBlock.php",
+    "color": 7976557,
+    "author": {
+      "name": "Daughter Pool Last Block Info",
+      "url": "http://msft.online/DaughterPool/BurstBlock.php",
+      "icon_url": "https://forums.burst-team.us/assets/uploads/profile/3216-profileimg.png"
+    }
+  }
+};
 
 
 //info
 client.on("message", (message) => {
 if (!message.content.startsWith(config.prefix)) return;
 
-  if (message.content === config.prefix + 'test') {
+  if (message.content === config.prefix + 'info') {
     message.channel.send(data1);
     message.channel.send(data2);
     //message.channel.send(data3);
@@ -104,6 +129,11 @@ if (!message.content.startsWith(config.prefix)) return;
         }else {
           if (message.content === config.prefix + 'uptime') {
             message.channel.send('current uptime is ' + Math.floor(process.uptime()/60) + 'minutes.');
+          }
+        }
+        else {
+          if (message.content === config.prefix + 'test') {
+            message.channel.send(data5);
           }
         }
       }
