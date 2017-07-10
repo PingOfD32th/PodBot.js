@@ -24,13 +24,13 @@ client.on('guildMemberAdd', member => {
 //embeds
 const data1 = {
   "embed": {
-    "title": "PoolofD32th.club",
-    "description": "Reward Recipient: [BURST-E925-FACX-C2X8-49772](http://burstcoin.biz/address/2311656582822632451)\n First brought online: [04/12/17](http://poolofd32th.club)\n Payout: [300 Mined coin OR 24 hrs](http://beta.poolofd32th.club/pools/MainPayoutFAQ.html)\n Rewards: [60/40 (standard)](http://beta.poolofd32th.club/pools/MainPayoutFAQ.html)\n Block History: [50 (standard)](http://beta.poolofd32th.club/pools/MainPayoutFAQ.html)\n Recommended plot size: [5TB+](http://beta.poolofd32th.club/pools/MainPayoutFAQ.html)\n Highest deadline accepted: [14 days (1209600)](http://beta.poolofd32th.club/pools/MainPayoutFAQ.html) \n",
-    "url": "http://poolofd32th.club",
+    "title": "pool.PoolofD32th.club",
+    "description": "Port: 8124\nReward Recipient: [BURST-E925-FACX-C2X8-49772](http://burstcoin.biz/address/2311656582822632451)\nFirst brought online: [04/12/17](http://poolofd32th.club)\nPayout: [300 Mined coin OR 24 hrs](http://beta.poolofd32th.club/pools/MainPayoutFAQ.html)\nRewards: [60/40 (standard)](http://beta.poolofd32th.club/pools/MainPayoutFAQ.html)\nBlock History: [50 (standard)](http://beta.poolofd32th.club/pools/MainPayoutFAQ.html)\nRecommended plot size: [5TB+](http://beta.poolofd32th.club/pools/MainPayoutFAQ.html)\nHighest deadline accepted: [14 days (1209600)](http://beta.poolofd32th.club/pools/MainPayoutFAQ.html) \n",
+    "url": "http://pool.poolofd32th.club",
     "color": 7976557,
     "author": {
       "name": "Mother Pool Info",
-      "url": "http://poolofd32th.club",
+      "url": "http://pool.poolofd32th.club",
       "icon_url": "http://forums.burst-team.us/assets/uploads/profile/3216-profileimg.png"
     }
   }
@@ -38,7 +38,7 @@ const data1 = {
 const data2 = {
   "embed": {
     "title": "xen.poolofD32th.club",
-    "description": "Reward Recipient: [BURST-LBQ2-XLPT-S2S8-64ZG5](http://burstcoin.biz/address/4736628939229308608)\n First brought online: [06/11/17](http://xen.poolofd32th.club)\n Fee: [1% (18.4 Burst/Blockfind)](http://xen.poolofd32th.club/js/test.html)\n Payout: [200 Mined coin OR 48 hrs](http://xen.poolofd32th.club/js/test.html)\n Rewards: [20/80](http://xen.poolofd32th.club/js/test.html)\n Block History: [500](http://xen.poolofd32th.club/js/test.html)\n Recommended plot size: [300GB+](http://xen.poolofd32th.club/js/test.html)\n Highest deadline accepted: [365 days (31536000)](http://xen.poolofd32th.club/js/test.html)\n",
+    "description": "Port: 8122\nReward Recipient: [BURST-LBQ2-XLPT-S2S8-64ZG5](http://burstcoin.biz/address/4736628939229308608)\nFirst brought online: [06/11/17](http://xen.poolofd32th.club)\nFee: [1% (18.4 Burst/Blockfind)](http://xen.poolofd32th.club/js/test.html)\nPayout: [200 Mined coin OR 48 hrs](http://xen.poolofd32th.club/js/test.html)\nRewards: [20/80](http://xen.poolofd32th.club/js/test.html)\nBlock History: [500](http://xen.poolofd32th.club/js/test.html)\nRecommended plot size: [300GB+](http://xen.poolofd32th.club/js/test.html)\nHighest deadline accepted: [365 days (31536000)](http://xen.poolofd32th.club/js/test.html)\n",
     "url": "http://xen.poolofd32th.club",
     "color": 7976557,
     "author": {
@@ -75,7 +75,7 @@ const data4 = {
 
 //info
 client.on("message", (message) => {
-if (!message.content.startsWith(config.prefi)) return;
+if (!message.content.startsWith(config.prefix)) return;
 
   if (message.content === config.prefix + 'info') {
     message.channel.send(data1);
@@ -117,7 +117,7 @@ if (!message.content.startsWith(config.prefi)) return;
 //rules
 client.on('message', message => {
   if (message.content === config.prefix + 'rules') {
-    message.channel.send("Rules:\n1) Respect everyone, & if a mod+ tells you not to do something. DON'T.\n2) Help those you can, we were all noobs at some point.\n3) Don't attempt to abuse the faucet. I will ban you.\n4) Don't make permanent share links. These can be used to abuse faucet.\n5) Don't be an ass\n6) Don't ask if you can ask a question, ask and if someone knows, they will answer.");
+    message.channel.send("```css\nRules:\n1) Respect everyone, & if a mod+ tells you not to do something. DON'T.\n2) Help those you can, we were all noobs at some point.\n3) Don't attempt to abuse the faucet. I will ban you.\n4) Don't make permanent share links. These can be used to abuse faucet.\n5) Don't be an ass\n6) Don't ask if you can ask a question, ask and if someone knows, they will answer.```");
     console.log('Rules Requested');
   }
 });
